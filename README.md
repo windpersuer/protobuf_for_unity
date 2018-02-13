@@ -1,17 +1,45 @@
 # protobuf_for_unity
-google's protobuf 3.x for Unity3d 5.x
+google's protobuf 3.2.0 for Unity3d 5.x
 
-来源：
+source:
 [google's protobuf](https://github.com/google/protobuf/tree/master/csharp)<br>
-版本号：3.x<br>
-适用：unity3d 5.x<br>
-备注：unity 2017 及以后版本请使用 google 官方版本<br>
+version: 3.2.0<br>
+apply to: Unity3d 5.x<br>
+notes: Unity 2017 and later version, please use google official version<br>
 <br>
-使用方法：<br>
-将目录 Google.Protobuf 下的所有文件拷到 Unity 工程中。<br>
-![](https://github.com/GongFaxin/protobuf_for_unity/raw/master/doc/Project.png)<br><br>
+instruction:<br>
+open the unity project: unity_project_protobuf<br>
+![](https://github.com/windpersuer/protobuf_for_unity/tree/master/doc/Project.png)<br><br>
 
-接下来可以参考 test_msg.proto<br>
+notice the 'NewBehaviourScript.cs' click unity run<br>
+```C#
+    private void _TestProtobuff ()
+    {
+        //1. new a message.
+        TheMsg message_1 = new TheMsg ();
+        message_1.Name = "steve jobs";
+        message_1.Num = 19550224;
+        Debug.Log ("message1: " + message_1.ToString());
+
+        //2. write byte buffer to file.
+        byte[] byte_buffer;
+        using (MemoryStream memoryStream = new MemoryStream())
+        {
+            message_1.WriteTo (memoryStream);
+            byte_buffer = memoryStream.ToArray ();
+        }
+
+        //3. read message from byte buffer.
+        TheMsg message_2 = TheMsg.Parser.ParseFrom (byte_buffer);
+        Debug.Log ("message2: " + message_2.ToString ());
+    }
+```
+log out: <br>
+![](https://github.com/windpersuer/protobuf_for_unity/tree/master/doc/Log.png)<br><br>
+it worked! <br>
+
+<br>
+and then, we should define 'test_msg.proto' in ./proto_origin<br>
 ```protobuf
 syntax = "proto3";
 
@@ -20,28 +48,12 @@ message TheMsg {
   int32 num = 2;
 }
 ```
-以及 Test.cs<br>
-```C#
-void Start ()
-{
-    TheMsg msg = new TheMsg();
-    msg.Name = "am the name";
-    msg.Num = 32;
 
-    Debug.Log(string.Format("The Msg is ( Name:{0},Num:{1} )",msg.Name,msg.Num));
+and, if you haven't set the "envionment variables" of your Operation System, then set it like this: <br>
+Path=C:/.../protobuf_for_unity/protoc.exe<br>
+proto_path=C:/.../protobuf_for_unity/protoc.exe<br>
+Of course, you can copy 'protoc.exe' to anywhere, as long as you filled the right path<br>
 
-    byte[] bmsg;
-    using (MemoryStream ms = new MemoryStream())
-    {
-        msg.WriteTo(ms);
-        bmsg = ms.ToArray();
-    }
-
-
-    TheMsg msg2 = TheMsg.Parser.ParseFrom(bmsg);
-    Debug.Log(string.Format("The Msg2 is ( Name:{0},Num:{1} )",msg2.Name,msg2.Num));
-
-}
-```
-测试输出：<br>
-![](https://github.com/GongFaxin/protobuf_for_unity/raw/master/doc/Log.png)<br><br>
+at last,  click 'generate_proto.bat' to generate 'TestMsg.cs' into ./proto_autocode<br>
+and copy 'TestMsg.cs' to unity project<br>
+<br>
