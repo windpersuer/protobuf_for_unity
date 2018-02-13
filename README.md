@@ -48,7 +48,6 @@ message TheMsg {
   int32 num = 2;
 }
 ```
-<br>
 
 and, if you haven't set the "envionment variables" of your Operation System, then set it like this: <br>
 Path=C:/.../protobuf_for_unity/protoc.exe<br>
