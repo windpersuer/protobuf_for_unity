@@ -1,0 +1,12 @@
+.vs
+*.userprefs
+*.vimentry
+*.swp
+
+unity_project_protobuf/*.csproj*
+unity_project_protobuf/*.sln
+unity_project_protobuf/*.userprefs
+unity_project_protobuf/Library
+unity_project_protobuf/obj
+unity_project_protobuf/Temp
+

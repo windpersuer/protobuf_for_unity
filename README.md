@@ -1,5 +1,5 @@
 # protobuf_for_unity
-google's protobuf 3.x for unity3D 5.x
+google's protobuf 3.x for Unity3d 5.x
 
 来源：
 [google's protobuf](https://github.com/google/protobuf/tree/master/csharp)<br>
