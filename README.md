@@ -9,7 +9,7 @@ notes: Unity 2017 and later version, please use google official version<br>
 <br>
 instruction:<br>
 open the unity project: unity_project_protobuf<br>
-![](https://github.com/windpersuer/protobuf_for_unity/tree/master/doc/Project.png)<br><br>
+![](https://raw.githubusercontent.com/windpersuer/protobuf_for_unity/master/doc/Project.png)<br><br>
 
 notice the 'NewBehaviourScript.cs' click unity run<br>
 ```C#
@@ -35,7 +35,7 @@ notice the 'NewBehaviourScript.cs' click unity run<br>
     }
 ```
 log out: <br>
-![](https://github.com/windpersuer/protobuf_for_unity/tree/master/doc/Log.png)<br><br>
+![](https://github.com/windpersuer/protobuf_for_unity/blob/master/doc/Log.png)<br><br>
 it worked! <br>
 
 <br>
