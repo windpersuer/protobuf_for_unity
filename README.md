@@ -38,16 +38,6 @@ log out: <br>
 ![](https://github.com/windpersuer/protobuf_for_unity/blob/master/doc/Log.png)<br><br>
 it worked! <br>
 
-<br>
-and then, we should define 'test_msg.proto' in ./proto_origin<br>
-```protobuf
-syntax = "proto3";
-
-message TheMsg {
-  string name = 1;
-  int32 num = 2;
-}
-```
 
 and, if you haven't set the "envionment variables" of your Operation System, then set it like this: <br>
 Path=C:/.../protobuf_for_unity/protoc.exe<br>
@@ -56,4 +46,16 @@ Of course, you can copy 'protoc.exe' to anywhere, as long as you filled the righ
 
 at last,  click 'generate_proto.bat' to generate 'TestMsg.cs' into ./proto_autocode<br>
 and copy 'TestMsg.cs' to unity project<br>
+
+<br>
+atlast, 'test_msg.proto' in ./proto_origin<br>
+```protobuf
+syntax = "proto3";
+
+message TheMsg {
+  string name = 1;
+  int32 num = 2;
+}
+```
+<br>
 
