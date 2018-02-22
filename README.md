@@ -49,7 +49,8 @@ and copy 'TestMsg.cs' to unity project<br>
 
 <br>
 atlast, 'test_msg.proto' in ./proto_origin<br>
-```protobuf
+```
+```
 syntax = "proto3";
 
 message TheMsg {
@@ -57,5 +58,3 @@ message TheMsg {
   int32 num = 2;
 }
 ```
-<br>
-
